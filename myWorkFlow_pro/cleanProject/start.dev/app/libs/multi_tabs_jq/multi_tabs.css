@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/*=====================================================
+    
+* Стильные вкладки с бесконечной вложенностью
+
+    Автор: http://dbmast.ru
+	Copyright: (c) 2015 Dobrovoimaster
+
+=====================================================*/
+
+/* Стили демо-страницы
+-----------------------------------------------------*/
+
+/* Вкладки (табы)
+-----------------------------------------------------*/
+.tabs {
+    width:100%;
+    max-width: 960px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0;
+}
+.tabs-nav {
+    overflow: hidden;
+    padding-left:14px;
+    padding-right: 14px;
+}
+.tabs-nav li {
+    color: #555;
+    padding: 5px 14px 3px;
+    position: relative;
+    text-decoration: none;
+    background-color: #e4e4e4;
+    border-top:1px solid #ccc;
+    border-radius:6px;
+    float: left;
+    display: block;
+    cursor:pointer; 
+    margin-right:8px;
+    font-family: 'Roboto',Helvetica,sans-serif;
+    font-size: 14px;
+    text-transform:none;
+}
+
+.tabs-nav li:before, .tabs-nav li:after {
+	display:block; 
+    content:" "; 
+    position:absolute;  
+    top:0; 
+    height:100%; 
+    width:16px; 	
+	background-color: #e4e4e4;
+}
+.tabs-nav li:before {
+	right:-4px;
+    z-index: 2;
+}
+.tabs-nav li:after {
+	left:-4px;
+}
+
+.tabs-nav li:hover, .tabs-nav li:hover:before, .tabs-nav li:hover:after {
+	background-color:#e9e9e9;
+}
+.tabs li.active, .tabs li.active:before, .tabs li.active:after, .tabs li.active:hover, .tabs li.active:hover:before, .tabs li.active:hover:after { 
+    background-color:#f4f4f4; color:#555;
+}
+.tabs li.active {
+    z-index:3;
+}
+.tabs-box > div {
+    display: none;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.9);
+    border:1px solid #ccc;
+    box-sizing: border-box;
+    -webkit-animation: fade 0.5s linear;
+    -ms-animation: fade 0.5s linear;
+    animation: fade 0.5s linear;
+}
+.tabs-box > .active {
+    display: block;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
