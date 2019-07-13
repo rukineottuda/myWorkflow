@@ -1,0 +1,9 @@
+﻿https://nodejs.org/en/
+https://gulpjs.com
+https://www.npmjs.com
+https://bower.io
+https://webpack.js.org
+https://www.browsersync.io
+http://getbootstrap.com
+=======================================================================
+If something not working check version files on relevance on this sites

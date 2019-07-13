@@ -1,0 +1,147 @@
+@import "node_modules/bourbon/core/bourbon"
+@import "_func.sass"
+@import "_fonts.sass"
+@import "_vars.sass"
+@import "app/libs/owl-carousel/assets/owl.carousel.sass"
+//>Default
+*
+	margin: 0
+	padding: 0
+body
+	//Подложка
+	background-color: #fff
+	font-size: 16px
+	min-height: 320px
+	min-width: 320px
+	// position: relative
+	line-height: 1.6
+	font-family: "OpenSansRegular", sans-serif
+	overflow-x: hidden
+	color: #222
+.main-wrap
+	display: block
+	padding-bottom: 150px
+.b,strong
+	font-family: "OpenSemiBold", sans-serif
+	font-weight: normal
+.hidden
+	display: none
+.responsive-img
+	// max-width: 100%
+	width: 100%
+//table свойства как у таблицы
+.table
+	display: table
+	width: 100%
+.tr
+	display: table-row
+.td
+	display: table-cell
+	vertical-align: middle
+
+.contacts-form
+	// padding: 32px 26px
+	// background-color: darken($blue, 5%)
+	.csf_headline,span
+		display: block
+		// padding: 5px
+		border-bottom: 2px solid orange
+		width: 30%
+	.button
+		margin-top: 25px
+	&-head
+		text-align: center
+		h4
+			font-size: em(18)
+			margin:
+				top: 0
+				bottom: 10px
+		p
+			color: #fff
+			opacity: .6
+			font-size: em(14)
+			margin-top: 0
+form
+	label
+		margin-bottom: 10px
+		display: block
+		span
+			font-size: 14px
+			color: #fff
+			opacity: .3
+			display: block
+			margin-bottom: 3px
+		input, select, selectize-input
+			background-color: rgba(255, 255, 255, .6)
+			border-radius: 2px
+			// border: none
+			// padding: 9px 15px 7px
+			display: block
+			width: 100%
+			color: #222
+			font-size: em(15)
+			border-bottom: $blue 4px solid
+			+mt(.5s)
+			&:focus
+				border-bottom: lighten($blue, 10%) 4px solid
+//< table end
+//<Default END
+
+//Style for main page
+h1, h2, h3, h4, h5 ,h6
+	font-family:  "OpenSansLight", sans-serif
+	font-weight: normal
+	// font-size: em(41px)
+	// line-height: 1.3
+h1
+	margin: 0
+h2
+	font-size: em(42)
+h3, h4
+	font-family: "OpenSansSemiBold", sans-serif
+	text-transform: uppercase
+	// font-size: em(15px)
+h4
+	// font-size: em(13px)
+ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+a
+	color: silver
+	display: block
+	outline: none !important
+	&:hover, &:focus
+		color: #fff
+.text-left
+	text-align: left
+.text-right
+	text-align: right
+.text-center
+	text-align: center
+.fll
+	float: left
+.flr
+	float: right
+.accent-lighter
+	color: #FFBA00
+.btn
+	background-color: orange
+	margin-top: 20px
+	padding: 5px 20px
+	font-size: 18px
+input
+	min-width: 90%
+	padding: 8px 20px
+//Style for main page end
+
+//>Start hat
+/*Vars:
+	background-color: #1a1a1a
+	background-color: $blue
+	*/
+* html .clearfix
+	height: 1%
+.ishome
+	height: 100%
+	min-width: 240px
