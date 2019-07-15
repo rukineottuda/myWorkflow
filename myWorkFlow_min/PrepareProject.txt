@@ -1,4 +1,4 @@
-﻿***Важно, если что то не запускается , основные проблемы в правильности путей или пакеты обновились и изменился синтаксис
+***Важно, если что то не запускается , основные проблемы в правильности путей или пакеты обновились и изменился синтаксис
 (мониторим Npm и сайты пакета в файле CheckFirst.txt, приведены ссылки)***
 
 Структура проекта:
@@ -8,18 +8,17 @@
 	|-[assets]
 	|-[cheetssheet]
 	|-[cleanProject]
-		|-[myServers](два вида WAMP собраный самим(делает тот минимум что требуется от WAMP) или  готовый: openserver, занимает больше места)
 		|-[start.dev]
-			|-[app] папка приложения
-			|-[dist] если нет то появится при сборке галпом(сюда будет выгружаться готовый проект)
-			|-[backup] резервные копии
-			|-[gulpjs_configurator] конфигуратор галп версий(3тья устарела, но еще работает)
-			|-[logs] файл логов(для customWAMP сервера)
-			|-[node_modules] (нужно проиниализировать Gulp npm i)
-			|-gulpfile.js файл тасков
-			|-package-lock.json системная копия файла npm пакетов и зависимостей
-			|-package.json файл npm пакетов и зависимостей
- 
+		|-[app] папка приложения
+		|-[dist] если нет то появится при сборке галпом(сюда будет выгружаться готовый проект)
+		|-[backup] резервные копии
+		|-[gulpjs_configurator] конфигуратор галп версий(3-я устарела, но еще работает)
+		|-[logs] файл логов(для customWAMP сервера)
+		|-[node_modules] (нужно проиниализировать Gulp npm i)
+		|-gulpfile.js файл тасков
+		|-package-lock.json системная копия файла npm пакетов и зависимостей
+		|-package.json файл npm пакетов и зависимостей
+	|-[myServers](два вида WAMP собраный самим(делает тот минимум что требуется от WAMP) или  готовый: openserver, занимает 		  больше места)
 	|-CheckFirst.txt
 	|-PrepareProject.txt
 	
@@ -34,11 +33,11 @@ Open Server(там адреса  прописывает сам);
 Если нужно быстро поднять сервер, лучше выбрать Open server.
 gulpjs_configurator - два варианта файла для чистой верстки и для натяжки на CMS(worpdress),впринципе идентичны,
 но для удобства изменены пути
-node_modules  - node модули ну жно установить npm i из package.json
+node_modules  - node модули надо установить npm i из package.json
 
 Подготовка проекта:
------------------------------------------------------------------------------------------------------------------------------
-1)Устанавливаем редактор мне нравятся 4: (visualStudioCode,sublime text на данный момент версия 3, и phpStorm, Visual studio).
+---------------------------------------------------------------------------------------------------------------------
+1)Устанавливаем редактор, например: (visualStudioCode, sublime text на данный момент версия 3, и phpStorm, Visual studio).
 2)Установим Контроль версий Git, пока просто установим.
 3) устанавливаем Node.js  https://nodejs.org/en/ (current version)
 Вызвать консоль из папки можно правая кнопка мыши +shift
@@ -50,9 +49,9 @@ npm -v
 npm node -v
 npm gulp -v
 
-дальше следует воспользоваться одним из предложенных ниже вариантов 
+Дальше следует воспользоваться одним из предложенных ниже вариантов: 
 a)
-если все хорошо  приступим к установке пакетов, или из уже имеющегося файла package.json
+если, все хорошо  приступим к установке пакетов, или из уже имеющегося файла package.json
 npm install
 и когда установятся пакеты создать файл gulpfile.js
 б)
@@ -102,25 +101,82 @@ https://www.youtube.com/watch?v=PEKN8NtBDQ0&list=PLY4rE9dstrJyTdVJpv7FibSaXB4BHP
 git config --global user.name "yourname"
 git config --global user.email"yourmail@gmail.com"
 
+если есть проблемы при push игнорирует кодировку
+git config --global core.autocrlf false 
+git config -- global core.safecrlf false
+
 git config
+git help
 git config --list
 git add . 
 git add имя файла
 git status
 
 Создание нового репозитория
+---------------------------------------------------------------------------------------------------------------------
 echo "# cleanProject" >> README.md
 git init
 git add README.md
+git add .  добавит всё
+git add yournamefile
+
+
+git reset <file>
+git reset
+git status
 git commit -m "first commit"
+git remote -v
 git remote add origin https://github.com/yourname/cleanProject.git
 git push -u origin master
 
-заливка в существующий 
+Добавление ветвления(версионность)
+---------------------------------------------------------------------------------------------------------------------
+Добавление веток
+git checkout -b yournamebranch создание ветки, и сразу перехеод на неё
+git branch
+git branch -v
+git checkout yournamebranch переход на ветку
+git branch merged
+git branch --no-merged
+git merge yournamebranch
+
+Удаление веток
+git branch -d yournamebranch
+git branch -D yournamebranch
+
+
+Работа с репозиторием
+---------------------------------------------------------------------------------------------------------------------
+Доступ к репозиторию (HTTPS or SSH)
+ssh-keygen генерация  публичного коюча
+
+Заливка в существующий(с локального, располагающимся на вашем компьютере) 
+---------------------------------------------------------------------------------------------------------------------
 git remote add origin https://github.com/yourname/cleanProject.git
 git push -u origin master
+git push -set-upstream yournamerep yournamebranch
+
+Заливка из удаленного  в локальный
+git fetch your(url or ssh alias) name rep
+git pull your(url or ssh alias)
+git pull origin test --allow-unrelated-histories (important command if "push" error)
+
+
+Удаление из репозитория
+---------------------------------------------------------------------------------------------------------------------
+Полное удаление:
+git rm -r yournamefolder
+git commit -m "Remove duplicated directory"
+git push origin yournamebranch
+
+Удаление из удаленного репозитория локальная версия остается
+git rm -r --cached myFolder для папки
+git rm --cached mylogfile.log для одного файла
+
+
 
 Команды для Git:
+---------------------------------------------------------------------------------------------------------------------
 git clone
 git odd -- all
 git commit -m "my first commit"
