@@ -24,6 +24,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "three": "^0.99.0"
+    "three": "^0.125.0"
   }
 }
